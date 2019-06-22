@@ -1,0 +1,38 @@
+[package]
+
+# Project metadata
+name = "bvm_filter"
+version = "0.1.10"
+authors = ["Bitconch Core Dev <dev@bitconch.io>"]
+
+# Additional metadata for packaging
+description = "Virtual machine and JIT compiler for eBPF programs"
+repository = "https://github.com/bitconch/bvm-filter"
+readme = "README.md"
+keywords = ["BPF", "eBPF", "interpreter", "JIT", "filtering"]
+license = "Apache-2.0/MIT"
+
+# Packaging directives
+include = [
+    "src/**",
+    "examples/**",
+    "tests/**",
+    "bench/**",
+    "LICENSE*",
+    "Cargo.toml",
+]
+
+[dependencies]
+
+combine = "2.5"
+libc = "0.2"
+time = "0.1"
+byteorder = "1.2"
+elfkit = "0.0.6"
+num-traits = "0.2.5"
+hash32 = "0.1.0"
+
+[dev-dependencies]
+
+elf = "0.0.10"
+json = "0.11"
