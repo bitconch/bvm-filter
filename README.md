@@ -2,39 +2,17 @@
 
 ![](misc/rbpf_256.png)
 
-Bitconch Virutl Machine, an eBPF interpreter written in Rust (user-space).
+Bitconch Virutl Machine, 用Rust编写的eBPF解释器（用户空间）。
 
-
-* [Description](#description)
-* [Link to the crate](#link-to-the-crate)
-* [API](#api)
-* [Example uses](#example-uses)
-* [Building eBPF programs](#building-ebpf-programs)
-* [Feedback welcome!](#feedback-welcome)
-* [Questions / Answers](#questions--answers)
-* [Caveats](#caveats)
-* [_To do_ list](#to-do-list)
-* [License](#license)
-* [Inspired by](#inspired-by)
-* [Other resources](#other-resources)
+BVM虚拟机
 
 ## Description
 
-This crate contains a virtual machine for eBPF program execution. BPF, as in
-_Berkeley Packet Filter_, is an assembly-like language initially developed for
-BSD systems, in order to filter packets in the kernel with tools such as
-tcpdump so as to avoid useless copies to user-space. It was ported to Linux,
-where it evolved into eBPF (_extended_ BPF), a faster version with more
-features. While BPF programs are originally intended to run in the kernel, the
-virtual machine of this crate enables running it in user-space applications;
-it contains an interpreter, an x86_64 JIT-compiler for eBPF programs, as well as
-a disassembler.
+此包含用于执行eBPF程序的虚拟机。 与_Berkeley Packet Filter_中一样，BPF是一种最初为BSD系统开发的类似汇编的语言，用于使用tcpdump等工具过滤内核中的数据包，以避免无用的副本到用户空间。 它后来移植到Linux，在那里它演变成eBPF（_extended_ BPF）。 eBPF运行速度更快，功能更多。 虽然BPF程序最初打算在内核中运行，但此crate的虚拟机允许在用户空间应用程序中运行它;它包含一个解释器，一个用于eBPF程序的x86_64 JIT编译器，以及一个反汇编程序。
 
-It is based on Rich Lane's [uBPF software](https://github.com/iovisor/ubpf/),
-which does nearly the same, but is written in C.
+该软件基于Rich Lane的[uBPF软件]（https://github.com/iovisor/ubpf/），它的功能基本相同，但用C语言编写。
 
-The crate is supposed to compile and run on Linux, MacOS X, and Windows,
-although the JIT-compiler does not work with Windows at this time.
+该软件包应该在Linux，MacOS X上编译和运行，并将在以后支持Windows。
 
 ## Link to the crate
 
@@ -44,7 +22,7 @@ file:
 
 ```toml
 [dependencies]
-bvm_filter = "0.1.2"
+bvm_filter = "1.0.0"
 ```
 
 You can also use the development version from this GitHub repository. This
@@ -358,7 +336,7 @@ to your `Cargo.toml` file.
 
 ```toml
 [dependencies]
-bvm_filter = "0.1.2"
+bvm_filter = "1.0.0"
 elf = "0.0.10"
 ```
 
