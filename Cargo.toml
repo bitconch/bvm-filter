@@ -2,7 +2,7 @@
 
 # Project metadata
 name = "bvm_filter"
-version = "0.0.0"
+version = "1.0.0"
 authors = ["Bitconch Core Dev <dev@bitconch.io>"]
 
 # Additional metadata for packaging
